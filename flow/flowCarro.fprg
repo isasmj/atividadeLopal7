@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flowCarro"/>
+        <attribute name="authors" value="DES-MH"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-09 07:55:47 "/>
+        <attribute name="created" value="REVTLU1IO0RFU0tUT1AtQU1KVkIwQzsyMDI1LTA0LTA5OyIwNzozMjoxOCAiOzI2Nzg="/>
+        <attribute name="edited" value="REVTLU1IO0RFU0tUT1AtQU1KVkIwQzsyMDI1LTA0LTA5OyIwNzo1NTo0NyAiOzE7Mjc5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tipoCarro" type="String" array="False" size=""/>
+            <declare name="diasAlugados" type="Integer" array="False" size=""/>
+            <declare name="quantosKmPercorridos, valorTotal" type="Real" array="False" size=""/>
+            <output expression="&quot;Qual &#233; o seu tipo de carro, popular ou de luxo?&quot;" newline="True"/>
+            <input variable="tipoCarro"/>
+            <if expression="tipoCarro == &quot;popular&quot;">
+                <then>
+                    <output expression="&quot;Quantos dias de aluguel?&quot;" newline="True"/>
+                    <input variable="diasAlugados"/>
+                    <output expression="&quot;Quantos quilometros foram percorridos?&quot;" newline="True"/>
+                    <input variable="quantosKmPercorridos"/>
+                    <if expression="quantosKmPercorridos &lt;= 100">
+                        <then>
+                            <assign variable="valorTotal" expression="(90*diasAlugados) + (0.2*quantosKmPercorridos)"/>
+                        </then>
+                        <else>
+                            <assign variable="valorTotal" expression="(90*diasAlugados) + (0.1*quantosKmPercorridos)"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Com um carro &quot; &amp;tipoCarro&amp; &quot; que foi alugado por &quot; &amp;diasAlugados&amp; &quot; dias e percorreu &quot;  &amp;quantosKmPercorridos&amp; &quot;  km, o valor total &#233; &quot; &amp;valorTotal" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Quantos dias de aluguel?&quot;" newline="True"/>
+                    <input variable="diasAlugados"/>
+                    <output expression="&quot;Quantos quilometros foram percorridos?&quot;" newline="True"/>
+                    <input variable="quantosKmPercorridos"/>
+                    <if expression="quantosKmPercorridos &lt;= 200">
+                        <then>
+                            <assign variable="valorTotal" expression="(150*diasAlugados) + (0.30*quantosKmPercorridos)"/>
+                        </then>
+                        <else>
+                            <assign variable="valorTotal" expression="(150*diasAlugados) + (0.25*quantosKmPercorridos)"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Com um carro &quot; &amp;tipoCarro&amp; &quot; que foi alugado por &quot; &amp;diasAlugados&amp; &quot; dias e percorreu &quot;  &amp;quantosKmPercorridos&amp; &quot;  km, o valor total &#233; &quot; &amp;valorTotal" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
